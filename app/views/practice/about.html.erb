@@ -1,0 +1,43 @@
+<style>
+	
+
+#color_me_in {
+	background-color: <%= @color %>;
+	color: white;
+
+
+}
+
+h2{
+	padding: 15%;
+}
+
+.box{
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	height: 100%;
+	font-family: helvetica, arial, sans-serif;
+
+}
+
+</style>
+
+
+<div  id = color_me_in class = box >
+
+<h2> <%= @color.upcase %> BOX ACTIVATED! </h2>
+
+</div>
+
+<div class = box >
+<%= form_tag index_path do %>
+
+		<p> <%= text_field_tag :name, nil, placeholder: "What's your name?" %> </p>
+		<p><%= submit_tag :submit %></p>
+
+<% end %>
+
+</div>
+
+
