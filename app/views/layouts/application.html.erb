@@ -9,8 +9,30 @@
   </head>
 
   <body>
-  	<div class ="container">
-    	<%= yield %>
-   	</div>
+    <div class="container">
+          <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+         
+          <a class="navbar-brand" href="#">Esteban's Blog</a>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav mr-auto mt-4 mt-md-0">
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">See All</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Credits</a>
+              </li>
+            </ul>
+   
+          </div>
+        </nav>
+
+
+    	 <%= yield %>
+   	  
+
+    </div>
   </body>
 </html>

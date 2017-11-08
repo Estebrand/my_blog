@@ -1,14 +1,20 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar{
+	background-color: rgba(0,50.2,50.2,0.15);
+}
 
+.nav-item{
+	margin-left: 20px;
+	margin-top: 12.5%;
 
+}
+
+.nav-link , .navbar-brand{
+	color:rgb(244, 110, 66);
+}
 
 h1, h2, h3, h4, h5, h6, th, a, .subheader{
-
-
 	text-decoration: none;
-	color: orange;
+	color: rgb(244, 110, 66);
 }
 h1{
 	text-align: center;
@@ -23,5 +29,11 @@ td, p{
 }
 
 hr{
-	
+
 }
+
+li{
+		list-style: none;
+
+}
+
