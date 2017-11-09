@@ -40,15 +40,17 @@
 
 			<% @post.comments.each do |c| %>
 					<div class="well">
-					<p><%= c.author %> said...<br /></p>
-					<p><%= c.comment_entry %><br /></p>
-					<p>on <%= c.created_at.strftime("%d %b. %y") %></p>
+						<p><%= c.author %> said...<br /></p>
+						<p><%= c.comment_entry %><br /></p>
+						<p>on <%= c.created_at.strftime("%d %b. %y") %></p>
+
 					</div>
 			<% end %>
 
 	</div>
 	
 	<hr>
+
 
 	<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info " %> 
 	<%= link_to 'Back', posts_path, class: "btn btn-primary" %>

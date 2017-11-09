@@ -22,7 +22,13 @@
   </div>
 
   <div class="field subheader">
-    <%= form.hidden_field :post_id, value: @post.id %>
+    <% if @post != nil %>
+
+      <%= form.hidden_field :post_id, value: @post.id %>
+    <% else %>
+      <%= form.hidden_field :post_id, value: @comment.post_id %>
+    <% end %>
+
   </div> 
 
   <div class="actions comment_btn">

@@ -15,3 +15,89 @@
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.navbar{
+	background-color:#f5f5f5;
+}
+
+.nav-item{
+	margin-left: 20px;
+/*	margin-top: 10px;*/
+float:left;
+
+}
+
+.nav-link , .navbar-brand, h5{
+	color:rgb(244, 110, 66);
+}
+
+.line{
+	border-color: rgba(0,50.2,50.2,0.15);
+}
+
+.center-block{
+	max-width: 100px;
+}
+.comment_box{
+	width:100%;
+	display:block;
+}
+
+.comment_btn{
+	margin-top: 10px;
+}
+
+.btn{
+	opacity: 0.85;
+}
+
+h1, h2, h3, h4, h5, h6{
+
+color: rgb(244, 110, 66);
+
+}
+
+.subheader{
+
+color: rgb(244, 110, 66);
+
+}
+h1{
+	text-align: center;
+}
+
+
+ p{
+	color:#545454;
+}
+
+hr{
+
+}
+
+li{
+		list-style: none;
+
+}
+
+.center_text{
+	text-align: center;
+}
+
+#post_blog_entry{
+	width:100%;
+	min-height: 300px;
+}
+
+#post_title{
+		width:100%;
+}
+#post_author{
+		width:100%;
+}
+
+.title{
+	font-size: 22px;
+	font-weight: 700;
+	color:rgb(244, 110, 66);
+}
