@@ -13,8 +13,11 @@
 
 			<p class="col col-md-4 col-sm-4 col-xs-4">
 			  <strong class="subheader">Author:</strong>
-			  <%= @post.author %>
+			  <%= @post.user.username %>
+			   <p><%= image_tag @post.user.avatar.url %></p>
 			</p>
+
+
 
 				<p class="col col-md-4 col-sm-4 col-xs-4">
 			  <strong class="subheader">Created On:</strong>
@@ -40,8 +43,17 @@
 
 			<% @post.comments.each do |c| %>
 					<div class="well">
-						<p><%= c.author %> said...<br /></p>
-						<p><%= c.comment_entry %><br /></p>
+						<p><%= c.user.username %> said...<br /></p>
+
+					<!-- AVATAR -->
+						<% if current_user.avatar.url != nil %>
+						 <p><%= image_tag c.user.avatar.url %></p>
+						 <% end %>
+
+
+						<div class="well comment-color">
+							<p><%= c.comment_entry %><br /></p>
+						</div>
 						<p>on <%= c.created_at.strftime("%d %b. %y") %></p>
 						<%= link_to 'Change', edit_comment_path(id: c.id), class: "btn btn-info" %>	
 					</div>
@@ -51,9 +63,6 @@
 	
 	<hr>
 
-
-	<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info " %> 
-	<%= link_to 'Back', posts_path, class: "btn btn-primary" %>
 
 <hr class="line">
    <p class="center_text"> &copy;EsteBrand 2017</p>

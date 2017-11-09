@@ -22,8 +22,7 @@
       </div>
 
       <div class="field col col-md-6 col-sm-6 col-xs-6">
-        <%= form.label :author, class: "subheader" %>
-        <%= form.text_field :author, id: :post_author%>
+       <%= form.hidden_field :user_id, value: current_user.id %>
       </div>
     </div>
     <div class="row">

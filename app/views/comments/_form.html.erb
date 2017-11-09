@@ -12,12 +12,11 @@
   <% end %>
 
   <div class="field subheader">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :comment_author, class: "comment_box" %>
+       <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="field subheader">
-    <%= form.label :comment_entry %>
+  <div class="field">
+  
     <%= form.text_area :comment_entry, id: :comment_comment_entry, class: "comment_box" %>
   </div>
 
