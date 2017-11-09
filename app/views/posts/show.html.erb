@@ -43,7 +43,7 @@
 						<p><%= c.author %> said...<br /></p>
 						<p><%= c.comment_entry %><br /></p>
 						<p>on <%= c.created_at.strftime("%d %b. %y") %></p>
-						<%= link_to 'Change', edit_comment_path(id: @comment_post.id) %>	
+						<%= link_to 'Change', edit_comment_path(id: c.id), class: "btn btn-info" %>	
 					</div>
 			<% end %>
 
