@@ -1,32 +1,49 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<hr class="line">
+
+<div class = "well">
+  <div class="row">
+    <%= form_with(model: post, local: true) do |form| %>
+      <% if post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+
+      <div class="field col col-md-6 col-sm-6 col-xs-6">
+        <%= form.label :title, class: "subheader" %>
+        <%= form.text_field :title, id: :post_title%>
+      </div>
+
+      <div class="field col col-md-6 col-sm-6 col-xs-6">
+        <%= form.label :author, class: "subheader" %>
+        <%= form.text_field :author, id: :post_author%>
+      </div>
+    </div>
+    <div class="row">
+
+
+      <div class="field col col-md-12 col-sm-12 col-xs-12">
+        <%= form.label :blog_entry, class: "subheader" %>
+        <%= form.text_area :blog_entry, id: :post_blog_entry %>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="actions col col-md-12 col-sm-12 col-xs-12">
+        <%= form.submit class: "btn btn-info center-block comment_btn" %>
+      </div>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :post_author %>
-  </div>
 
-  <div class="field">
-    <%= form.label :blog_entry %>
-    <%= form.text_area :blog_entry, id: :post_blog_entry %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<hr class="line">
+<p class="center_text">&copy;EsteBrand 2017 </p>

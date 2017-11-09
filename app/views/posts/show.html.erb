@@ -1,36 +1,57 @@
 
+<h1 class="center_text"><%= @post.title %></h1>
+<hr class="line">
 
+<div class="well">
 	<p id="notice"><%= notice %></p>
 
-	<p >
-	  <strong class="subheader">Title:</strong>
-	  <%= @post.title %>
-	</p>
+	<div class="row">
+			<p class="col col-md-4 col-sm-4 col-xs-4">
+			  <strong class="subheader">Title:</strong>
+			  <%= @post.title %>
+			</p>
+
+			<p class="col col-md-4 col-sm-4 col-xs-4">
+			  <strong class="subheader">Author:</strong>
+			  <%= @post.author %>
+			</p>
+
+				<p class="col col-md-4 col-sm-4 col-xs-4">
+			  <strong class="subheader">Created On:</strong>
+			  <%= @post.created_at.strftime("%d %b. %y") %>
+			</p>
+
+	</div>
 
 	<p>
-	  <strong class="subheader">Author:</strong>
-	  <%= @post.author %>
-	</p>
-
-	<p>
-	  <strong class="subheader">Blog entry:</strong>
+	  <strong class="subheader"></strong>
 	  <%= @post.blog_entry %>
 	</p>
 	
-	<hr>
+</div>	
+	<hr class="line">
 	
+
+	<h4>Leave a Comment Below</h4>
+
 	<div id="comment">
 	  <%= render 'comments/form', comment: @comment %>
 	<hr>
-		<% @post.comments.each do |c| %>
-				<p><%= c.author %> said...<br /></p>
-				<p><%= c.comment_entry %></p>
 
-		<% end %>
+			<% @post.comments.each do |c| %>
+					<div class="well">
+					<p><%= c.author %> said...<br /></p>
+					<p><%= c.comment_entry %><br /></p>
+					<p>on <%= c.created_at.strftime("%d %b. %y") %></p>
+					</div>
+			<% end %>
+
 	</div>
 	
 	<hr>
-	
-	<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %> 
+
+	<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info " %> 
 	<%= link_to 'Back', posts_path, class: "btn btn-primary" %>
 
+<hr class="line">
+   <p class="center_text"> &copy;EsteBrand 2017</p>

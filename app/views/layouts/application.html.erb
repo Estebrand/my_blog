@@ -12,17 +12,17 @@
     <div class="container">
           <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
          
-          <a class="navbar-brand" href="#">Esteban's Blog</a>
+          <p><%= link_to "Esteban's Blog", root_path, class: "navbar-brand" %></p>
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
             <ul class="navbar-nav mr-auto mt-4 mt-md-0">
 
               <li class="nav-item">
-                <a class="nav-link" href="#">See All</a>
+              <p><%= link_to "New Post", new_post_path, class: "nav-link" %></p>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Credits</a>
+               <p> <%= link_to "Posts", root_path, class: "nav-link" %> </p>
               </li>
             </ul>
    
