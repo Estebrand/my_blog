@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc).page(params[:page])
   end
 
   # GET /posts/1
@@ -22,6 +22,10 @@ class PostsController < ApplicationController
   def edit
   end
 
+  # USER'S POST
+  def user_posts
+    @user = User.find_by(username: params[:name])
+  end
 
   # POST /posts
   # POST /posts.json

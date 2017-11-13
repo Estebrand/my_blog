@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get 'comment' => 'comments#index'
 
+  get '/:name' => 'posts#user_posts', as: :user_posts
+
+# #Practice stuff below
   get 'index' => 'practice#index'
 
   get 'about' =>'practice#about'

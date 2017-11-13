@@ -11,38 +11,53 @@
       <div class="well">
           <div class="row">
 
-              <p class="col col-md-3 col-sm-3 col-xs-3 title"><%= post.title  %></p>
+              <p class="col col-md-4 col-sm-4 col-xs-4 title"><%= post.title  %></p>
 
-              <p class="col col-md-3 col-sm-3 col-xs-3"><strong class="subheader">Author: </strong><%= post.user.username %>
-              </p>
-
-          <!-- Avatar -->
-             <p class="col col-md-2 col-sm-2 col-xs-2">
+           <!-- Avatar -->
+             <p class="col col-md-1 col-sm-1 hidden-xs">
               <% if post.user.avatar.url != nil %>
               <%= image_tag post.user.avatar.url, class: "avatar" %>
               <% end %>
             </p>
+
+              <p class="col col-md-3 col-sm-3 col-xs-4"><strong class="subheader">Author: </strong><%= link_to post.user.username, user_posts_path(name: post.user.username) %>
+              </p>
+
+       
 
               <p class="col col-md-4 col-sm-4 col-xs-4"><strong class="subheader">Created On: </strong><%= post.created_at.strftime("%d %b. %y")  %></p>
 
           </div>
               <hr class="line">
           <div>
-            <p ><%= post.blog_entry %></p>
+            <p ><%= post.blog_entry.html_safe %></p>
           </div>
             <hr class="line">
 
           <div class="row">
 
             <p class="col col-md-4 col-sm-4 col-xs-4"><%= link_to 'Show', post, class: "btn btn-info center-block" %></p>
+        
+          <%if post.user_id == current_user.id %>    
+            <p class="col col-md-4 col-sm-4 col-xs-4 ">
+
+              <%= link_to 'Edit', edit_post_path(post),class: "btn btn-primary center-block" %>            
+              </p>
             
-            <p class="col col-md-4 col-sm-4 col-xs-4 "><%= link_to 'Edit', edit_post_path(post),class: "btn btn-primary center-block" %></p>
-            
-            <p class="col col-md-4 col-sm-4 col-xs-4"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-warning center-block"  %></p>
+            <p class="col col-md-4 col-sm-4 col-xs-4">
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-warning center-block"  %> 
+              </p>
+            <% end %>
+          
           </div>
 
         </div>
    <% end %>
+   <!-- Paginate --> 
+    <p class="center_text nav-link" 
+      <%= paginate @posts %> >
+    </p>
+   <!-- Credits -->
      <hr class="line">
     <p class="center_text"> &copy;EsteBrand 2017</p>
 </div>
