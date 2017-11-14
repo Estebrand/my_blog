@@ -19,14 +19,24 @@
 
 /*NAVIGATION*/
 body{
-	background-color:rgba(205,163,79,0.4);
+	background-image: url("xv.png");
+
 }
-.well{
-	background-color: #fffff0; 
+.wrapper1{
+		background: rgba(180,219,192,0.2);
+
+}
+
+.container{
+	background-color: transparent;
+
+}
+.well ,.navbar{
+	background-image: url("swirl.png");
 
 }
 .navbar{
-	background-color:  #fffff0;
+
 	border-style: solid;
 	border-width: 2px;
 	border-color: #e3e3e3;
@@ -40,9 +50,6 @@ body{
 
 }
 
-.nav-link , .navbar-brand, h5{
-	color:#636b46;
-}
 
 /*AVATAR*/
 .nav-pic{
@@ -63,8 +70,49 @@ body{
 }
 
 
+/*#comment_comment_entry{
+	height: 200px;
+}*/
+
+
+h2, h3, h4, h5, h6{
+
+color: #CDA34F;
+
+}
+ .navbar-brand,.title, h1, h5{
+	color:#b56357;
+}
+
+.nav-link ,.subheader, {
+	color:#A7B3a5;
+
+
+}
+
+.title{
+	font-size: 22px;
+	font-weight: 700;
+
+
+}
+
+h1{
+	text-align: center;
+}
+
+
+a, p{
+	color:#565656;
+}
+
+li{
+		list-style: none;
+
+}
+
 .line{
-	border-color: rgba(0,50.2,50.2,0.15);
+	border-color: #b4dbc0;
 }
 
 .center-block{
@@ -78,40 +126,6 @@ body{
 .comment_btn{
 	margin-top: 10px;
 }
-/*#comment_comment_entry{
-	height: 200px;
-}*/
-
-
-h2, h3, h4, h5, h6{
-
-color: #373f27;
-
-}
-
-h1, .subheader{
-
-color:#373f27;
-
-}
-h1{
-	text-align: center;
-}
-
-
- p{
-	color:#565656;
-}
-
-hr{
-
-}
-
-li{
-		list-style: none;
-
-}
-
 .center_text{
 	text-align: center;
 }
@@ -128,33 +142,31 @@ li{
 		width:100%;
 }
 
-.title{
-	font-size: 22px;
-	font-weight: 700;
 
-}
 .comment-color{
 	background-color: white;
 }
 
 /*BUTTONS*/
-.btn-warning{
-	background-color:#CDA34F;
-	border-color: #CDA34F;
-	color: #E9E7DA;
+.btn-warning, .btn-info, .btn-primary{
+	background-color:#A7B3a5;
+	border-color: #A7B3a5;
+	color: white;
 }
 
-.btn-info{
-	background-color:#CDA34F;
-	border-color: #CDA34F;
-	color: #E9E7DA;
+
+.btn-primary:hover, .btn-warning:hover, .btn-info:hover{
+	background-color:#b56357;
+	border-color: #b56357;
 }
 
-.btn-primary{
-	background-color:#CDA34F;
-	border-color: #CDA34F;
-	color: #E9E7DA;
+.btn-primary:wisited, .btn-warning:wisited, .btn-info:wisited{
+	background-color:#b4dbc0;
+	border-color: #b4dbc0;
 }
-.btn{
-	opacity: 0.85;
+
+
+a:hover{
+	text-decoration: none;
+	color:#b56357 ;
 }
