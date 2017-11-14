@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 
   <h1>Posts</h1>
-  <p class="nav-link center_text"> Welcome <%= current_user.username %></p>
+  <p class="center_text"> Welcome <%= current_user.username %></p>
    
       <% @posts.each do |post| %>
 
@@ -55,7 +55,5 @@
     <p class="center_text nav-link" 
       <%= paginate @posts %> >
     </p>
-   <!-- Credits -->
-     <hr class="line">
-    <p class="center_text"> &copy;EsteBrand 2017</p>
+
 </div>

@@ -11,53 +11,71 @@
   <body>
     <div class ="wrapper1">
       <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <!-- NAV -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
   <!-- NAV BRAND -->
-          <p><%= link_to "Esteban's Blog", root_path, class: "navbar-brand" %></p>
+         <%= link_to "Esteban's Blog", root_path, class: "navbar-brand" %>
           
 
-<!-- NAV TOGGLE BUTTON -->
-           <button class="pull-right navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+  <!-- NAV TOGGLE BUTTON -->
+           <button class="nav-btn pull-right navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="glyphicon glyphicon-menu-hamburger"></span>
           </button>
 
-          <div class=" collapse navbar-collapse" id="navbarTogglerDemo02">
+          <div class=" collapse navbar-collapse" id ="navbarTogglerDemo02" >
 
 
    <!-- LINKS IN NAV -->
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
 
               <li class="nav-item">
-              <p><%= link_to "New Post", new_post_path, class: "nav-link" %></p>
+            <%= link_to "New Post", new_post_path, class: "nav-link" %>
               </li>
-              <li class="nav-item">
-               <p> <%= link_to "Posts", root_path, class: "nav-link" %> </p>
-              </li>
-            </ul>
+              
 
-      <!-- Devise Sign Out -->
-            <div class="pull-right">
-              <% if user_signed_in? %>
-        <!-- Edit Profile -->
-            <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-link" %>
-            
-          <!-- Sign Out -->
-                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      <!-- AVATAR -->
-               <% if current_user.avatar.url != nil %>
-               <%= image_tag current_user.avatar.url, class: "nav-pic nav-link" %>
-               <% end %>
+              <li class="nav-item">
+               <%= link_to "Posts", root_path, class: "nav-link" %> 
+              </li>
+             
+<!-- Devise -->
+               <% if user_signed_in? %>
+                   <!-- Edit Profile -->
+                  <li class="nav-item">
+                      <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-link" %>
+
+                  </li>
+
+                  <li class="nav-item">
+                  <!-- Devise Sign Out -->   
+                         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+
+                  </li>
+
+                  <li class="nav-item">
+                        <!-- AVATAR -->
+                    <% if current_user.avatar.url != nil %>
+                   <%= image_tag current_user.avatar.url, class: "nav-pic" %>
+                   <% end %>
+
+                  </li>
+
               <% end %>
+            </ul>
+    
             </div>
 
-          </div>
+     
         </nav>
-
-
+     
     	 <%= yield %>
    	  
-      </div>
+     
+         <!-- Credits -->
+     <hr id="bottom-hr" class="line">
+    <p class="bottom center_text"> &copy;EsteBrand 2017</p>
+     </div>
     </div>
   </body>
 </html>
